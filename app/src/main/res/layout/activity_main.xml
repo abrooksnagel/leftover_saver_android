@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.leftoversaver.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo_image_view"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            android:background="@color/colorMain"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_image_view">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/burger"/>
+
+            <TextView
+                android:id="@+id/text_view_one"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/colorMain"
+                android:textSize="20sp"
+                android:text="What would you like to do?"
+                android:padding="8dp"
+                android:textAllCaps="true"/>
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_below="@id/text_view_one"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:onClick="goToSave"
+                android:text="Save a new leftover"
+                android:padding="8dp"
+                android:background="@color/colorMain" />
+
+            <Button
+                android:id="@+id/show_button"
+                android:layout_below="@id/save_button"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:onClick="goToShow"
+                android:text="Show your leftovers"
+                android:padding="8dp"
+                android:background="@color/colorMain" />
+
+            <TextView
+                android:id="@+id/warning"
+                android:layout_below="@id/show_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/warning"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:padding="8dp"
+                android:background="@color/colorMain"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
+
+

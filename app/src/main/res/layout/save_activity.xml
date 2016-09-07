@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.leftoversaver.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo_image_view"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            android:background="#92A013"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_image_view">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/burger"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/food_item"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:background="#92A013"-->
+                <!--android:textSize="20sp"-->
+                <!--android:text="Food Item:"-->
+                <!--android:padding="8dp"-->
+                <!--android:textAllCaps="true"/>-->
+
+            <EditText
+                android:id="@+id/food_item_entry"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:padding="8dp"
+                android:background="#92A013"
+                android:hint="Food Item"
+                android:inputType="text"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/prepared_date"-->
+                <!--android:layout_below="@id/food_item_entry"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:background="#92A013"-->
+                <!--android:textSize="20sp"-->
+                <!--android:text="Prepared Date\n(Leave Blank to Default to Now):"-->
+                <!--android:padding="8dp"-->
+                <!--android:textAllCaps="true"/>-->
+
+            <EditText
+                android:id="@+id/date_button"
+                android:layout_below="@id/food_item_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp"
+                android:background="#92A013"
+                android:hint="Preparation Date"
+                android:onClick="showDatePickerDialog"/>
+
+            <EditText
+                android:id="@+id/time_button"
+                android:layout_below="@id/date_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp"
+                android:background="#92A013"
+                android:hint="Preparation Time"
+                android:onClick="showTimePickerDialog"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/default_message"-->
+                <!--android:layout_below="@id/show_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginBottom="16dp"-->
+                <!--android:padding="8dp"-->
+                <!--android:text="Leave blank to default to now"-->
+                <!--android:background="#92A013"/>-->
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_below="@id/time_button"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:padding="8dp"
+                android:background="#92A013"
+                android:text="submit"
+                android:onClick="saveItem"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
