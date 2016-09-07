@@ -59,7 +59,7 @@ public class LeftoverAdapter extends ArrayAdapter<Leftover> {
         TextView timeTextView = (TextView) listItemView.findViewById(R.id.saved_time);
         // Get the version name from the current Word object and
         // set this text on the name TextView
-        timeTextView.setText("at " + currentLeftover.getSavedTime());
+        timeTextView.setText(" at " + currentLeftover.getSavedTime());
 
         Button deleteButton = (Button) listItemView.findViewById(R.id.delete_button);
         deleteButton.setOnClickListener(new View.OnClickListener() {
