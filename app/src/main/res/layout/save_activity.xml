@@ -3,29 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorMain"
     tools:context="com.example.android.leftoversaver.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content" >
 
         <ImageView
             android:id="@+id/logo_image_view"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="8dp"
             android:src="@drawable/logo"
             android:background="@color/colorMain"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_below="@id/logo_image_view">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
                 android:src="@drawable/burger"/>
 
             <EditText
@@ -72,21 +74,22 @@
                 android:textAppearance="?android:textAppearanceMedium"
                 android:onClick="showTimePickerDialog"/>
 
-            <Button
-                android:id="@+id/notification_button"
-                android:layout_below="@id/time_button"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_layout_height"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:layout_marginRight="@dimen/activity_margin"
-                android:layout_marginLeft="@dimen/activity_margin"
-                android:padding="8dp"
-                android:background="@color/colorMain"
-                android:text="Notification?" />
+            <!--To be used when notification is completed-->
+            <!--<Button-->
+                <!--android:id="@+id/notification_button"-->
+                <!--android:layout_below="@id/time_button"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/activity_layout_height"-->
+                <!--android:layout_marginTop="@dimen/activity_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_margin"-->
+                <!--android:layout_marginLeft="@dimen/activity_margin"-->
+                <!--android:padding="8dp"-->
+                <!--android:background="@color/colorMain"-->
+                <!--android:text="Notification?" />-->
 
             <Button
                 android:id="@+id/submit_button"
-                android:layout_below="@id/notification_button"
+                android:layout_below="@id/time_button"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/activity_layout_height"
                 android:layout_marginTop="@dimen/activity_margin"
@@ -96,6 +99,7 @@
                 android:background="@color/colorMain"
                 android:text="submit"
                 android:onClick="saveItem" />
+            <!--android:layout_below="@id/notification_button"-->
 
         </RelativeLayout>
     </RelativeLayout>

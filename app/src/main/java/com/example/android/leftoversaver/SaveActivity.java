@@ -53,9 +53,7 @@ public class SaveActivity extends AppCompatActivity {
         Leftover object = new Leftover(foodItemString, savedDateString, savedTimeString);
         object.save();
 
-        String objectString = object.toString();
-        Log.v("SAVE right here", objectString);
-        Toast.makeText(getBaseContext(), "Food item saved", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Food item saved", Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -81,10 +79,6 @@ public class SaveActivity extends AppCompatActivity {
             String monthString = months[month];
             String dayString = Integer.toString(day);
             Log.v("Testing DatePicker", monthString + " " + dayString + ", " + yearString);
-
-            // Display the date on screen
-//            EditText editDateText = (EditText)getActivity(). findViewById(R.id.date_button);
-//            editDateText.setText(monthString + " " + dayString + ", " + yearString);
 
             // Display the date on screen
             TextView editDateText = (TextView)getActivity(). findViewById(R.id.date_button);
