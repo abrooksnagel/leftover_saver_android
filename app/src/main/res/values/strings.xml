@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LeftoverSaver</string>
     <string name="warning">Leftover Saver! makes no claims of preventing food waste and assumes no responsibility for food borne illnesses. \nBy using Leftover Saver! you agree to these terms.</string>
+    <string name="question">What would you like to do?</string>
 </resources>

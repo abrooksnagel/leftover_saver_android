@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/logo"
-            android:background="#92A013"/>
+            android:background="@color/colorMain"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -30,55 +30,70 @@
 
             <EditText
                 android:id="@+id/food_item_entry"
-                android:layout_marginTop="16dp"
-                android:layout_margin="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/activity_layout_height"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_marginRight="@dimen/activity_margin"
+                android:layout_marginLeft="@dimen/activity_margin"
                 android:padding="8dp"
-                android:background="#92A013"
+                android:background="@color/colorMain"
                 android:hint="Food Item"
-                android:inputType="text"/>
+                android:inputType="text"
+                android:textAppearance="?android:textAppearanceMedium"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/date_button"
                 android:layout_below="@id/food_item_entry"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="16dp"
+                android:layout_height="@dimen/activity_layout_height"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_marginRight="@dimen/activity_margin"
+                android:layout_marginLeft="@dimen/activity_margin"
                 android:padding="8dp"
-                android:background="#92A013"
+                android:background="@color/colorMain"
                 android:hint="Preparation Date"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:onClick="showDatePickerDialog"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/time_button"
                 android:layout_below="@id/date_button"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="16dp"
+                android:layout_height="@dimen/activity_layout_height"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_marginRight="@dimen/activity_margin"
+                android:layout_marginLeft="@dimen/activity_margin"
                 android:padding="8dp"
-                android:background="#92A013"
+                android:background="@color/colorMain"
                 android:hint="Preparation Time"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:onClick="showTimePickerDialog"/>
 
             <Button
                 android:id="@+id/notification_button"
                 android:layout_below="@id/time_button"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_margin="16dp"
+                android:layout_height="@dimen/activity_layout_height"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_marginRight="@dimen/activity_margin"
+                android:layout_marginLeft="@dimen/activity_margin"
                 android:padding="8dp"
-                android:background="#92A013"
+                android:background="@color/colorMain"
                 android:text="Notification?" />
 
             <Button
                 android:id="@+id/submit_button"
                 android:layout_below="@id/notification_button"
-                android:layout_margin="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="@dimen/activity_layout_height"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:layout_marginRight="@dimen/activity_margin"
+                android:layout_marginLeft="@dimen/activity_margin"
                 android:padding="8dp"
-                android:background="#92A013"
+                android:background="@color/colorMain"
                 android:text="submit"
                 android:onClick="saveItem" />
 

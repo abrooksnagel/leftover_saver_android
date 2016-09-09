@@ -5,9 +5,13 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorMain</item>
         <item name="colorPrimaryDark">@color/colorSecondary</item>
-        <item name="colorAccent">@color/colorOther</item>
+        <item name="colorAccent">@color/colorSecondary</item>
     </style>
-
+    <style name="PickerTheme" parent="Base.V11.Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorMain</item>
+        <item name="colorPrimaryDark">@color/colorSecondary</item>
+        <item name="colorAccent">@color/colorSecondary</item>
+    </style>
     <!--<style name="CategoryStyle">-->
         <!--<item name="android:layout_width">match_parent</item>-->
         <!--<item name="android:layout_height">@dimen/list_item_height</item>-->
@@ -17,5 +21,6 @@
         <!--<item name="android:textStyle">bold</item>-->
         <!--<item name="android:textAppearance">?android:textAppearanceMedium</item>-->
     <!--</style>-->
+
 
 </resources>

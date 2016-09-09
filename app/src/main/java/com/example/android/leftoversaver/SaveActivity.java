@@ -1,32 +1,41 @@
 package com.example.android.leftoversaver;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 
 import java.util.Calendar;
 
 public class SaveActivity extends AppCompatActivity {
 
+//    Button notificationButton;
+
     @Override
        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.save_activity);
+
+
+//Code for notification
+//        notificationButton = (Button) findViewById(R.id.notification_button);
+//        notificationButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                PendingIntent pendingIntent = PendingIntent.getActivity(, 0, intent, 0);
+//            }
+//        });
     }
 
     public void saveItem(View v) {
@@ -34,10 +43,10 @@ public class SaveActivity extends AppCompatActivity {
         EditText foodItemText = (EditText)findViewById(R.id.food_item_entry);
         String foodItemString = foodItemText.getText().toString();
 
-        EditText savedDateText = (EditText)findViewById(R.id.date_button);
+        TextView savedDateText = (TextView)findViewById(R.id.date_button);
         String savedDateString = savedDateText.getText().toString();
 
-        EditText savedTimeText = (EditText)findViewById(R.id.time_button);
+        TextView savedTimeText = (TextView)findViewById(R.id.time_button);
         String savedTimeString = savedTimeText.getText().toString();
 
 
@@ -50,14 +59,6 @@ public class SaveActivity extends AppCompatActivity {
         finish();
     }
 
-
-
-
-
-
-
-
-
 //Datepicker
     public static class DatePickerFragment extends DialogFragment
                 implements DatePickerDialog.OnDateSetListener {
@@ -65,37 +66,36 @@ public class SaveActivity extends AppCompatActivity {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Calendar c = Calendar.getInstance();
+
             int year = c.get(Calendar.YEAR);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
 
+
             return new DatePickerDialog(getActivity(), this, year, month, day);
         }
 
-
         public void onDateSet(DatePicker view, int year, int month, int day) {
             String yearString = Integer.toString(year);
-            String monthString = Integer.toString(month);
+            String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+            String monthString = months[month];
             String dayString = Integer.toString(day);
-            Log.v("Testing DatePicker", monthString + dayString + yearString);
+            Log.v("Testing DatePicker", monthString + " " + dayString + ", " + yearString);
 
             // Display the date on screen
-            EditText editDateText = (EditText)getActivity(). findViewById(R.id.date_button);
-            editDateText.setText(monthString + dayString + yearString);
+//            EditText editDateText = (EditText)getActivity(). findViewById(R.id.date_button);
+//            editDateText.setText(monthString + " " + dayString + ", " + yearString);
 
-
+            // Display the date on screen
+            TextView editDateText = (TextView)getActivity(). findViewById(R.id.date_button);
+            editDateText.setText(monthString + " " + dayString + ", " + yearString);
         }
     }
-
 
     public void showDatePickerDialog(View v) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getFragmentManager(), "datePicker");
     }
-
-
-
-
 
 //Time picker
     public static class TimePickerFragment extends DialogFragment
@@ -114,14 +114,35 @@ public class SaveActivity extends AppCompatActivity {
         }
 
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            String hourString = Integer.toString(hourOfDay);
-            String minuteString = Integer.toString(minute);
-            Log.v("Testing TimePicker", hourString + minuteString);
+            String hourString;
+            String periodString;
+            String minuteString;
+
+            if (hourOfDay > 0 && hourOfDay < 12) {
+                hourString = Integer.toString(hourOfDay);
+                periodString = " a.m.";
+            } else if (hourOfDay == 12) {
+                hourString = Integer.toString(hourOfDay);
+                periodString = " p.m.";
+            } else if (hourOfDay > 12 && hourOfDay < 24) {
+                hourString = Integer.toString(hourOfDay - 12);
+                periodString = " p.m.";
+            } else {
+                hourString = Integer.toString(hourOfDay + 12);
+                periodString = " a.m.";
+            }
+
+            if (minute < 10) {
+                minuteString = "0" + Integer.toString(minute);
+            } else {
+                minuteString = Integer.toString(minute);
+            }
+
+            Log.v("Testing TimePicker", hourString + ":" + minuteString + periodString);
 
             // Display the time on screen
-            EditText editDateText = (EditText)getActivity(). findViewById(R.id.time_button);
-            editDateText.setText(hourString + minuteString);
-
+            TextView editDateText = (TextView)getActivity(). findViewById(R.id.time_button);
+            editDateText.setText(hourString + ":" + minuteString + periodString);
         }
     }
 
@@ -129,7 +150,6 @@ public class SaveActivity extends AppCompatActivity {
         DialogFragment newFragment = new TimePickerFragment();
         newFragment.show(getFragmentManager(), "timePicker");
     }
-
 }
 
 

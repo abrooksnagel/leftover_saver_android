@@ -15,8 +15,8 @@
             android:id="@+id/saved_food_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#92A013"
-            android:textSize="18sp"
+            android:background="@color/colorMain"
+            android:textAppearance="?android:textAppearanceMedium"
             android:paddingTop="8dp"
             android:paddingLeft="8dp"/>
 
@@ -30,8 +30,8 @@
                 android:id="@+id/saved_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#92A013"
-                android:textSize="18sp"
+                android:background="@color/colorMain"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:paddingLeft="8dp"
                 android:paddingBottom="8dp"/>
 
@@ -39,15 +39,15 @@
                 android:id="@+id/saved_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#92A013"
-                android:textSize="18sp"
+                android:background="@color/colorMain"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:paddingBottom="8dp"/>
 
         </LinearLayout>
 
         <Button
             android:id="@+id/delete_button"
-            android:layout_width="wrap_content"
+            android:layout_width="64dp"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"

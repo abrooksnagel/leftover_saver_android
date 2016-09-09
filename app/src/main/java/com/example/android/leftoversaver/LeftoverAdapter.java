@@ -17,7 +17,6 @@ import java.util.List;
  * Created by abrooksnagel on 9/3/16.
  */
 public class LeftoverAdapter extends ArrayAdapter<Leftover> {
-    List<Leftover> leftovers;
 
     /**
      * Create a new LeftoverAdapter object.
@@ -27,7 +26,6 @@ public class LeftoverAdapter extends ArrayAdapter<Leftover> {
      */
     public LeftoverAdapter(Activity context, List<Leftover> leftovers) {
         super(context, 0, leftovers);
-
     }
 
     @Override
@@ -42,10 +40,10 @@ public class LeftoverAdapter extends ArrayAdapter<Leftover> {
         final Leftover currentLeftover = getItem(position);
 
         TextView foodTextView = (TextView) listItemView.findViewById(R.id.saved_food_item);
-        foodTextView.setText("You saved " +currentLeftover.getFoodItem());
+        foodTextView.setText("You saved " +currentLeftover.getFoodItem() + " on");
 
         TextView dateTextView = (TextView) listItemView.findViewById(R.id.saved_date);
-        dateTextView.setText("on " + currentLeftover.getSavedDate());
+        dateTextView.setText(currentLeftover.getSavedDate());
 
         TextView timeTextView = (TextView) listItemView.findViewById(R.id.saved_time);
         timeTextView.setText(" at " + currentLeftover.getSavedTime());
@@ -59,14 +57,9 @@ public class LeftoverAdapter extends ArrayAdapter<Leftover> {
 
                 remove(currentLeftover); //Removes from the adapter
                 notifyDataSetChanged();
-
-
             }
-
         });
 
         return listItemView;
-
     }
-
 }
