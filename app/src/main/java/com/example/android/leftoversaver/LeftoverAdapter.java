@@ -1,7 +1,6 @@
 package com.example.android.leftoversaver;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +52,6 @@ public class LeftoverAdapter extends ArrayAdapter<Leftover> {
             @Override
             public void onClick(View v) {
                 currentLeftover.delete(); //Deletes from database
-                Log.v("Testing onClick", currentLeftover.toString());
 
                 remove(currentLeftover); //Removes from the adapter
                 notifyDataSetChanged();

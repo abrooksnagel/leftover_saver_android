@@ -7,7 +7,6 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -78,7 +77,6 @@ public class SaveActivity extends AppCompatActivity {
             String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
             String monthString = months[month];
             String dayString = Integer.toString(day);
-            Log.v("Testing DatePicker", monthString + " " + dayString + ", " + yearString);
 
             // Display the date on screen
             TextView editDateText = (TextView)getActivity(). findViewById(R.id.date_button);
@@ -131,8 +129,6 @@ public class SaveActivity extends AppCompatActivity {
             } else {
                 minuteString = Integer.toString(minute);
             }
-
-            Log.v("Testing TimePicker", hourString + ":" + minuteString + periodString);
 
             // Display the time on screen
             TextView editDateText = (TextView)getActivity(). findViewById(R.id.time_button);
