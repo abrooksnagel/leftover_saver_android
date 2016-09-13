@@ -1,4 +1,4 @@
-package com.example.android.leftoversaver;
+package com.abrooksnagel.android.leftoversaver;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -32,22 +32,22 @@ public class LeftoverAdapter extends ArrayAdapter<Leftover> {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.show_activity, parent, false);
+                    com.abrooksnagel.android.leftoversaver.R.layout.show_activity, parent, false);
         }
 
         // Get the Leftover object located at this position in the list
         final Leftover currentLeftover = getItem(position);
 
-        TextView foodTextView = (TextView) listItemView.findViewById(R.id.saved_food_item);
+        TextView foodTextView = (TextView) listItemView.findViewById(com.abrooksnagel.android.leftoversaver.R.id.saved_food_item);
         foodTextView.setText("You saved " +currentLeftover.getFoodItem() + " on");
 
-        TextView dateTextView = (TextView) listItemView.findViewById(R.id.saved_date);
+        TextView dateTextView = (TextView) listItemView.findViewById(com.abrooksnagel.android.leftoversaver.R.id.saved_date);
         dateTextView.setText(currentLeftover.getSavedDate());
 
-        TextView timeTextView = (TextView) listItemView.findViewById(R.id.saved_time);
+        TextView timeTextView = (TextView) listItemView.findViewById(com.abrooksnagel.android.leftoversaver.R.id.saved_time);
         timeTextView.setText(" at " + currentLeftover.getSavedTime());
 
-        Button deleteButton = (Button) listItemView.findViewById(R.id.delete_button);
+        Button deleteButton = (Button) listItemView.findViewById(com.abrooksnagel.android.leftoversaver.R.id.delete_button);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

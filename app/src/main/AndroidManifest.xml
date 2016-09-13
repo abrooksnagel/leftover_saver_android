@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.leftoversaver">
+    package="com.abrooksnagel.android.leftoversaver" >
 
     <application
         android:allowBackup="true"
@@ -12,9 +12,9 @@
         <meta-data android:name="DATABASE" android:value="leftover.db" />
         <meta-data android:name="VERSION" android:value="1" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.abrooksnagel" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.abrooksnagel.android.leftoversaver.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,18 +22,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SaveActivity"
-            android:parentActivityName="com.example.android.leftoversaver.MainActivity">
+            android:name="com.abrooksnagel.android.leftoversaver.SaveActivity"
+            android:parentActivityName="com.abrooksnagel.android.leftoversaver.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.leftoversaver.MainActivity" />
+                android:value="com.abrooksnagel.android.leftoversaver.MainActivity" />
         </activity>
         <activity
-            android:name=".ShowActivity"
-            android:parentActivityName="com.example.android.leftoversaver.MainActivity">
+            android:name="com.abrooksnagel.android.leftoversaver.ShowActivity"
+            android:parentActivityName="com.abrooksnagel.android.leftoversaver.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.leftoversaver.MainActivity" />
+                android:value="com.abrooksnagel.android.leftoversaver.MainActivity" />
         </activity>
     </application>
 

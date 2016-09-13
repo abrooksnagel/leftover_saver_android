@@ -1,4 +1,4 @@
-package com.example.android.leftoversaver;
+package com.abrooksnagel.android.leftoversaver;
 
 import com.orm.SugarRecord;
 

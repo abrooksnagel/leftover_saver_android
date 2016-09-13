@@ -1,4 +1,4 @@
-package com.example.android.leftoversaver;
+package com.abrooksnagel.android.leftoversaver;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

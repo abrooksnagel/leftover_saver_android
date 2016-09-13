@@ -1,4 +1,4 @@
-package com.example.android.leftoversaver;
+package com.abrooksnagel.android.leftoversaver;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -23,7 +23,7 @@ public class SaveActivity extends AppCompatActivity {
     @Override
        protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.save_activity);
+        setContentView(com.abrooksnagel.android.leftoversaver.R.layout.save_activity);
 
 
 //Code for notification
@@ -39,13 +39,13 @@ public class SaveActivity extends AppCompatActivity {
 
     public void saveItem(View v) {
 
-        EditText foodItemText = (EditText)findViewById(R.id.food_item_entry);
+        EditText foodItemText = (EditText)findViewById(com.abrooksnagel.android.leftoversaver.R.id.food_item_entry);
         String foodItemString = foodItemText.getText().toString();
 
-        TextView savedDateText = (TextView)findViewById(R.id.date_button);
+        TextView savedDateText = (TextView)findViewById(com.abrooksnagel.android.leftoversaver.R.id.date_button);
         String savedDateString = savedDateText.getText().toString();
 
-        TextView savedTimeText = (TextView)findViewById(R.id.time_button);
+        TextView savedTimeText = (TextView)findViewById(com.abrooksnagel.android.leftoversaver.R.id.time_button);
         String savedTimeString = savedTimeText.getText().toString();
 
 
@@ -79,7 +79,7 @@ public class SaveActivity extends AppCompatActivity {
             String dayString = Integer.toString(day);
 
             // Display the date on screen
-            TextView editDateText = (TextView)getActivity(). findViewById(R.id.date_button);
+            TextView editDateText = (TextView)getActivity(). findViewById(com.abrooksnagel.android.leftoversaver.R.id.date_button);
             editDateText.setText(monthString + " " + dayString + ", " + yearString);
         }
     }
@@ -131,7 +131,7 @@ public class SaveActivity extends AppCompatActivity {
             }
 
             // Display the time on screen
-            TextView editDateText = (TextView)getActivity(). findViewById(R.id.time_button);
+            TextView editDateText = (TextView)getActivity(). findViewById(com.abrooksnagel.android.leftoversaver.R.id.time_button);
             editDateText.setText(hourString + ":" + minuteString + periodString);
         }
     }

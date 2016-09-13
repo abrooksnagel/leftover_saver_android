@@ -1,4 +1,4 @@
-package com.example.android.leftoversaver;
+package com.android.android.leftoversaver;
 
 import org.junit.Test;
 
